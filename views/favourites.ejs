@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Favourites</title>
+  <link rel="stylesheet" href="../output.css">
+</head>
+<body class="gap-5 flex flex-col">
+  <header class="bg-red-500 flex gap-15">
+  <a class="text-3xl text-white font-bold hover:text-black border-2 border-black rounded p-2" href="/">Home</a>
+  <a class="text-3xl text-white font-bold hover:text-black border-2 border-black rounded p-2"  href="/get-favourites">Favourites</a>
+  </header>
+  <h1 class="text-3xl flex justify-center font-bold text-black">Your Favourite Hotels</h1>
+  <main class="sm:grid sm:grid-cols-4 gap-5 flex flex-col">
+    
+  
+  <% favHomes.forEach(home =>{%>
+    <div class="flex flex-col justify-center font-bold text-2xl shadow-xl content-around hover:z-10 h-auto">
+      <div class="flex justify-center">
+        <img 
+        src= "<%= home.ImageUrl %>"
+        height="400" width="400"/>
+      </div>
+      <div class="flex justify-center">
+        <%= home.hostName %>
+      </div>
+      <div class="flex justify-center">
+        <%= home.houseName %>
+      </div>
+      <div class="flex justify-center">
+        <%= home.Location %>
+      </div>
+      <div class="flex justify-center">
+        <%= home.price %>$
+        
+      </div>
+      <div>
+        <form action="/get-favourites/<%= home._id %>" method="post">
+          <input class="bg-red-400 hover:cursor-pointer" type="submit" value="remove">
+        </form>
+      </div>
+    <div class="flex flex-row justify-start gap-15">
+ 
+    </div>
+    </div>
+    
+  </div>
+  
+  <%})%>  
+  
+  </main>
+</body>
+</html>

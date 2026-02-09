@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../output.css">
+  <title>Login</title>
+</head>
+<body class="bg-white scroll-auto relative">
+  <header class="bg-red-500 text-4xl flex justify-start gap-15 p-2" >
+    <a href="/login"  class="flex justify-start font-bold text-black  w-fit hover:bg-red-300 border-2 rounded">Login</a>
+    <a href="/signup"  class="flex justify-start font-bold text-black  w-fit hover:bg-red-300 border-2 rounded">signup</a>
+  </header>
+  <br>
+  <h1 class="text-4xl font-bold text-black top-1 flex justify-center">Login </h1>
+  <br>
+  <main class="flex justify-center items-center flex-col relative min-h-[calc(100vh-var(--header-h))]">
+
+    <div class="w-fit flex-col justify-evenly items-center">
+      <% if(errors) {%>
+        <div class="mb-2 bg-red-400/60 w-fit font-bold">
+          <%= errors %>
+        </div>
+    <form action="/login" method="post" class="flex flex-col w-fit items-center">
+      <input required placeholder="Enter your email" value="<%= oldInput.email %>" name="email" type="email"  class="border-2 border-black rounded font-bold text-black hover:bg-red-300 cursor-pointer"><br>
+      <input required placeholder="Enter your password" name="password" type="password"  
+      class="border-2 border-black rounded font-bold text-black hover:bg-red-300 cursor-pointer"><br>
+
+      <% }  else{%>
+          <form action="/login" method="post" class="flex flex-col w-fit items-center">
+      <input required placeholder="Enter your email" name="email" type="email"  class="border-2 border-black rounded font-bold text-black hover:bg-red-300 cursor-pointer"><br>
+      <input required placeholder="Enter your password" name="password" type="password"  
+      class="border-2 border-black rounded font-bold text-black hover:bg-red-300 cursor-pointer"><br>
+  <% } %>
+      <button type="submit" value="submit" 
+      class="bg-red-500 min-w-fit font-bold text-3xl rounded border-2 border-black text-white  hover:cursor-pointer hover:text-black" >Login</button>
+
+    </form>
+  
+    <a href="/signup">dont have an account signup here</a>
+    </div>
+  </main>
+  
+</body>
+</html>

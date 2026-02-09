@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../output.css">
+  <title>Edit HOme</title>
+</head>
+<body class="flex flex-col justify-center">
+  <header class="bg-red-500 relative">
+    <a href="/" class="font-bold text-white text-2xl max-h-4 hover:text-black">Home</a>
+  </header>
+  <h1 class="text-3xl font-bold text-black flex justify-center">House Details</h1>
+  <div class="h-20"></div>
+  <form action="/home_edited" method="post" enctype="multipart/form-data" class="p-5 flex justify-center flex-col max-w-xs    ">
+    <input name="_id" value="<%= home._id%>" type="hidden"/>
+    <input class=" text-black font-bold hover:border-2 border-red-500" type="text" placeholder="Enter house name" name="houseName" value="<%= home.houseName %>"><br>
+    <input class=" text-black font-bold hover:border-2 border-red-500" type="text" placeholder="Location" name="Location" 
+    value="<%= home.Location %>"><br>
+    <input class=" text-black font-bold hover:border-2 border-red-500" type="number" placeholder="Price" name="price"
+    value="<%= home.price %>"><br>
+     <input class=" text-black font-bold hover:border-2 border-red-500" type="number" placeholder="Rating" name="rating"
+    value="<%= home.rating %>"><br>
+    <input class=" text-black font-bold hover:border-2 border-red-500" type="file" placeholder="choose file" accept="image/*" name="ImageUrl"
+    value="<%= home.ImageUrl %>"><br>
+    <input class=" text-black font-bold hover:border-2 border-red-500" type="text" placeholder="Description" name="description"
+    value="<%= home.description %>"><br>
+    <input class=" text-black font-bold border-2 border-black rounded hover:cursor-pointer hover:bg-red-500 hover:text-white"  type="submit" value="Edit">
+  
+  </form>
+  
+</body>
+</html>

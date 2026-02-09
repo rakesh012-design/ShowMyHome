@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../output.css">
+</head>
+<body class="flex flex-col gap-10">
+  <header class="bg-red-500 flex gap-15">
+    <a class="text-3xl text-white font-bold hover:text-black border-2 border-black rounded p-2" href="/">Home</a>
+  </header>
+  <main>
+    <h1 class="flex justify-center text-3xl text-black font-bold gap-10"> <%= home.houseName %></h1>
+    <br>
+  <div class="text-2xl font-bold border-2 w-fit mx-auto">
+  <div class="flex justify-center">
+      <img class="shadow-2xl" 
+      src= "../<%= home.ImageUrl %>"
+      height="400" width="400"/>
+    </div>
+    <br>
+  
+  <div class="flex justify-center text-black text-2xl"><%= home.hostName %></div>
+  <div class="flex justify-center text-black text-2xl"><%= home.Location %></div>
+  <div class="flex justify-center text-black text-2xl"><%= home.price %></div>
+  <div class="flex justify-center text-black text-2xl"><%= home.description %></div>
+  <div>
+    <form action="/download-image" method="post">
+      <input type="hidden" value="<%= String(home._id) %>" name="homeId">
+    <input type="submit" value="download-image" class="bg-red-500 text-white hover:text-black hover:cursor-pointer">
+    </form>
+  </div>
+    </div>
+  </div>
+  </main>
+</body>
+</html>
+>
